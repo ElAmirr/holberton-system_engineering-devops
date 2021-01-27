@@ -1,3 +1,4 @@
-#!/bin/bash
-file /tmp/holberton
-/tmp/holberton: directory
+#!/bin/bashfile
+mkdir /tmp/holberton
+
+
