@@ -1,0 +1,3 @@
+#!/bin/bash
+file /tmp/holberton
+/tmp/holberton: directory

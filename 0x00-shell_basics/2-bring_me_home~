@@ -1,0 +1,9 @@
+#!/bin/bash
+holbertonschool-3@holbertonschool3-HP-Desktop-Pro-G2:/tmp$ pwd
+/tmp
+holbertonschool-3@holbertonschool3-HP-Desktop-Pro-G2:/tmp$ echo $HOME
+/home/holbertonschool-3
+holbertonschool-3@holbertonschool3-HP-Desktop-Pro-G2:/tmp$ source ./2-bring_me_home
+holbertonschool-3@holbertonschool3-HP-Desktop-Pro-G2:~$ pwd
+/home/holbertonschool-3
+holbertonschool-3@holbertonschool3-HP-Desktop-Pro-G2:~$ #!/bin/bash
