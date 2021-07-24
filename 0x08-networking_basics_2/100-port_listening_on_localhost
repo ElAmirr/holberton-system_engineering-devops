@@ -1,3 +1,4 @@
-#!/bin/bash
-# open a tcp connection on port 90
-sudo nc -lnvp 90
+#!/usr/bin/env bash
+# This script listens on port 98 on localhost
+
+sudo nc -l 98
