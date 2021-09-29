@@ -4,4 +4,4 @@ for _ in {1..10}
 # _ is a standard placeholder name for ignored members in a for-loop and tuple assignment
 do
 	echo "Holberton School"
-done
+
