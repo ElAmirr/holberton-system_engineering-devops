@@ -1,25 +1,32 @@
 #!/usr/bin/python3
-"""
-    Python script that, exports data in the JSON format.
-"""
-
+"""Python script to export data in the JSON format."""
 import json
 import requests
 import sys
 
+
 if __name__ == "__main__":
-    id = sys.argv[1]
-    usr_url = "https://jsonplaceholder.typicode.com/users/{}".format(id)
-    tds_url = "https://jsonplaceholder.typicode.com/users/{}/todos".format(id)
-
-    u = requests.get(usr_url).json()
-    todo = requests.get(tds_url).json()
-
-    with open('{}.json'.format(id), 'w') as json_file:
-        tasks = []
-        for t in todo:
-            tasks.append({"task": t.get("title"),
-                          "completed": t.get("completed"),
-                          "username": u.get("username")})
-        data = {"{}".format(id): tasks}
-        json.dump(data, json_file)
+    try:
+        user_id = sys.argv[1]
+        url_info = "https://jsonplaceholder.typicode.com/users/{}/".format(
+            user_id)
+        response = requests.get(url_info).json()
+        username = response.get("username")
+        urltodo = "https://jsonplaceholder.typicode.com/users/{}/todos".format(
+            user_id)
+        user_todos = requests.get(urltodo).json()
+        file_name = "{}.json".format(user_id)
+        all_data = {}
+        data_list = []
+        for todo in user_todos:
+            print(todo)
+            data = {}
+            data['task'] = todo.get('title')
+            data['completed'] = todo.get('completed')
+            data['username'] = username
+            data_list.append(data)
+        all_data[user_id] = data_list
+        with open(file_name, 'w', encoding='utf-8') as f:
+            json.dump(all_data, f)
+    except ValueError:
+        exit()
